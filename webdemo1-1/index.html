@@ -17,7 +17,10 @@
                 padding: 15px;
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1.1_version
         body {
             box-sizing: border-box;
             min-width: 200px;
@@ -80,6 +83,7 @@
     </div>
     <!-- 主体内容 -->
     <div class="main-container">
+<<<<<<< HEAD
         <!-- 加入了语音测评页面 -->
         <div class="module speech-evaluation" id="speech-evaluation">
             <textarea placeholder="where are you" style="width: 500px; height: 100px;"></textarea>
@@ -94,6 +98,68 @@
                 <p>调型分（仅限中文）：<span id="tone_score">0</span></p>
                 <p>整体印象分（仅限中文）：<span id="emotion_score">0</span></p>
                 <p>总分：<span id="total_score">0</span></p>
+=======
+            <!--加入语音测评页面-->
+            <!--<div class="module speech-evaluation" id="speech-evaluation">
+                <textarea placeholder="where are you" style="width: 500px; height: 100px; font-size: 16px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                <br />
+                <button id="btn_control" style="padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background-color: #007bff; color: white; cursor: pointer;">开始录音</button>
+                <div class="output-box" id="result_output" style="margin-top: 20px;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="background-color: #007bff; color: white; text-align: left;">
+                            <th style="padding: 10px;">评分类别</th>
+                            <th style="padding: 10px;">分数</th>
+                        </tr>
+                        <tr style="background-color: #e8f4ff;">
+                            <td style="padding: 10px; border: 1px solid #b3c6db;">准确度分</td>
+                            <td style="padding: 10px; border: 1px solid #b3c6db;"><span id="accuracy_score">0</span></td>
+                        </tr>
+                        <tr style="background-color: #d0e6ff;">
+                            <td style="padding: 10px; border: 1px solid #b3c6db;">流畅度分</td>
+                            <td style="padding: 10px; border: 1px solid #b3c6db;"><span id="fluency_score">0</span></td>
+                        </tr>
+                        <tr style="background-color: #e8f4ff;">
+                            <td style="padding: 10px; border: 1px solid #b3c6db;">完整度分</td>
+                            <td style="padding: 10px; border: 1px solid #b3c6db;"><span id="integrity_score">0</span></td>
+                        </tr>
+                        <tr style="background-color: #d0e6ff;">
+                            <td style="padding: 10px; border: 1px solid #b3c6db;">声韵分（仅限中文）</td>
+                            <td style="padding: 10px; border: 1px solid #b3c6db;"><span id="phone_score">0</span></td>
+                        </tr>
+                        <tr style="background-color: #e8f4ff;">
+                            <td style="padding: 10px; border: 1px solid #b3c6db;">调型分（仅限中文）</td>
+                            <td style="padding: 10px; border: 1px solid #b3c6db;"><span id="tone_score">0</span></td>
+                        </tr>
+                        <tr style="background-color: #d0e6ff;">
+                            <td style="padding: 10px; border: 1px solid #b3c6db;">整体印象分（仅限中文）</td>
+                            <td style="padding: 10px; border: 1px solid #b3c6db;"><span id="emotion_score">0</span></td>
+                        </tr>
+                        <tr style="background-color: #e8f4ff;">
+                            <td style="padding: 10px; border: 1px solid #b3c6db;">总分</td>
+                            <td style="padding: 10px; border: 1px solid #b3c6db;"><span id="total_score">0</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>-->
+        <!--加入语音测评页面-->
+       <div class="module speech-evaluation" id="speech-evaluation">
+            <textarea placeholder="where are you" style="width: 500px; height: 100px; font-size: 16px; padding: 10px; border: 2px solid #007bff; border-radius: 5px; outline: none; transition: border 0.3s; box-sizing: border-box;">
+</textarea>
+            <br />
+            <button id="btn_control" style="padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background-color: #007bff; color: white; cursor: pointer;">开始录音</button>
+            <div class="output-box" id="result_output">
+             <br/>
+
+            <div class="left" style="border: 3px solid #007bff; padding: 20px; border-radius: 15px; box-shadow: 2px 2px 10px #cccccc; width: 300px; background-color: #f7f7f7;">
+                    <p style="border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0; color: #333; font-size: 18px;">准确度分：<span id="accuracy_score" style="font-weight: bold; color: #007bff;">0</span></p>
+                    <p style="border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0; color: #333; font-size: 18px;">流畅度分：<span id="fluency_score" style="font-weight: bold; color: #007bff;">0</span></p>
+                    <p style="border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0; color: #333; font-size: 18px;">完整度分：<span id="integrity_score" style="font-weight: bold; color: #007bff;">0</span></p>
+                    <p style="border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0; color: #333; font-size: 18px;">声韵分（仅限中文）：<span id="phone_score" style="font-weight: bold; color: #007bff;">0</span></p>
+                    <p style="border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0; color: #333; font-size: 18px;">调型分（仅限中文）：<span id="tone_score" style="font-weight: bold; color: #007bff;">0</span></p>
+                    <p style="border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0; color: #333; font-size: 18px;">整体印象分（仅限中文）：<span id="emotion_score" style="font-weight: bold; color: #007bff;">0</span></p>
+                    <p style="margin: 0; color: #333; font-size: 18px;">总分：<span id="total_score" style="font-weight: bold; color: #007bff;">0</span></p>
+>>>>>>> 1.1_version
             </div>
             <div id="right" style="display: none;">
                 <p class="title">红色文字代表发音不标准：</p>
@@ -199,6 +265,7 @@
             <!-- 工具展示栏 -->
             <div class="AllTools">
                 <div class="tools Tool1" onclick="window.location.href='https://typing-word.ttentau.top'">
+<<<<<<< HEAD
                     <img src="SVG/单词本.svg" alt="">
                     <div class="h1p">单词本</div>
                     <div class="h2p">根据您学习的主题提供HSK 1-6级中文单词的记背和检测</div>
@@ -239,6 +306,57 @@
                     <div class="h2p">根据您选择的语言提供中文译文</div>
                 </div>
                 
+=======
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Typing word</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+                <div class="tools Planning">
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Planning Generator</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+                <div class="tools Content">
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Content Generator</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+                <div class="tools Questions">
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Questions Generator</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+                <div class="tools Intellectual Prep">
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Intellectual Prep</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+                <div class="tools">
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Image Generator</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+                <div class="tools">
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Image Generator</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+                <div class="tools">
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Image Generator</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+                <div class="tools">
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Image Generator</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+                <div class="tools">
+                    <img src="img/icon-tool-image-generator.svg" alt="">
+                    <div class="h1p">Image Generator</div>
+                    <div class="h2p">Generate and edit images with AI from Adobe Express</div>
+                </div>
+>>>>>>> 1.1_version
             </div>
 
         </div>
