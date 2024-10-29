@@ -365,11 +365,17 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// 小功能页面
 let toolbuttons = document.querySelectorAll(".tools")
 let tooldisplay = document.querySelector(".tool-display")
+let page_name = ""
+
+//类似于for item in items：
 toolbuttons.forEach(function (bu) { 
   if(!bu.textContent.includes("Typing")){
     bu.addEventListener('click', function (e) {
+      page_name = bu.querySelector(".h1p").textContent.trim();
+      console.log("page_name: ", page_name)
       tooldisplay.style.display = 'block';
       var moduleItems = document.querySelectorAll('.module');
       moduleItems.forEach(function (module) {
@@ -382,9 +388,34 @@ toolbuttons.forEach(function (bu) {
 var moduleItems = document.querySelectorAll('.module');
 function closeToolDisplay(){
   tooldisplay.style.display = 'none';
+  moduleItems[1].style.display = 'none';
+
   moduleItems[2].style.display = 'block';
 }
+
+
 function getReturn2(req_content) {
+  if (page_name == "演讲家") {
+    content = `我是一名汉语学习者，我的年级水平和主题分别为：${req_content}，请帮我生成一篇符合我现阶段水平且契合主题的演讲稿`
+  }
+  if (page_name == "语法家") {
+    content = `我是一名汉语学习者，我的年级水平和求助的问题分别为：${req_content}，请帮我解答语法问题`
+  }
+  if (page_name == "阅读家") {
+    content = `我是一名汉语学习者，我的年级水平和主题分别为：${req_content}，请帮我生成一篇符合我现阶段水平且契合主题的阅读材料`
+  }
+  if (page_name == "朗读家") {
+    content = `我是一名汉语学习者，我的年级水平和主题分别为：${req_content}，请帮我生成一篇符合我现阶段水平且契合主题的阅读材料`
+  }
+  if (page_name == "写作生成") {
+    content = `我是一名汉语学习者，需要进行写作练习，年级水平和写作的主题分别为：${req_content}，请帮我生成写作提示，文本分析和文本范例`
+  }
+  if (page_name == "文化体验") {
+    content = `我是一名汉语学习者，对中华传统文化感兴趣，我的年级水平和感兴趣的主题分别为：${req_content}。请为我介绍相关文化习俗，并提供相关知识讲解。`
+  }
+  if (page_name == "中外互译") {
+    content = `我是一名汉语学习者，我的年级水平和主题分别为：${req_content}，请帮我将以下文章翻译为中文`
+  }
   axios({
     url: 'https://api.fastgpt.in/api/v1/chat/completions',
     method: 'post',
@@ -393,10 +424,6 @@ function getReturn2(req_content) {
       "stream": false,
       "detail": false,
       "messages": [
-        {
-          "content": "这里要给一下提示词",//TODO
-          "role": "user"
-        },
         {
           "content": req_content,
           "role": "user"
@@ -421,20 +448,50 @@ function getReturn2(req_content) {
     // p[p.length - 1].innerHTML = marked.parse(content);
   })
 }
-function generate(){
-  tooldisplay.style.display = 'none';
-  moduleItems[2].style.display = 'none';
-  moduleItems[1].style.display = 'block';
-  content = document.querySelector('.content111')
-  console.log(content.value)
-  let newHTML = '\
-    <div class="message user-message" id="start-message">\
-    <div class="p1">' + content.value + '</div>\
-  </div>'
-  let innnn = document.querySelectorAll(".chat-item")
-  innnn[0].insertAdjacentHTML('beforeEnd', newHTML)
-  getReturn2(content.value)
-  content.value = ''
+// function generate(){
+//   tooldisplay.style.display = 'none';
+//   moduleItems[2].style.display = 'none';
+//   moduleItems[1].style.display = 'block';
+//   // 获取每个输入框的内容
+//   // let levelContent = document.querySelector('.level').value;
+//   // let contentContent = document.querySelector('.content111').value;
+//   // let notesContent = document.querySelector('.notes').value;
+//   // 将所有内容组合成一个字符串
+//   content = document.querySelector('.content111');
+//   let newHTML = '\
+//     <div class="message user-message" id="start-message">\
+//     <div class="p1">' + content.value + '</div>\
+//   </div>'
+//   let innnn = document.querySelectorAll(".chat-item")
+//   innnn[0].insertAdjacentHTML('beforeEnd', newHTML)
+//   getReturn2(content.value)
+//   content.value = ''
+// }
+function generate() {
+  // 获取每个输入框的内容
+  let levelContent = document.querySelector('.level').value; // 获取年级水平内容
+  let contentContent = document.querySelector('.content111').value; // 获取问题主要内容
+  let notesContent = document.querySelector('.notes').value; // 获取备注内容
+
+  // 将所有内容组合成一个字符串，供后端发送或显示
+  let content = `年级水平: ${levelContent}\n 主题: ${contentContent}`;
+  document.querySelectorAll(".chat-item")[0].innerHTML = '';
+  // 将拼接的内容显示在界面上
+  let newHTML = `
+    <div class="message user-message" id="start-message">
+    <div class="p1">${content}</div>
+    </div>`;
+  
+  let chatContainer = document.querySelectorAll(".chat-item");
+  chatContainer[0].insertAdjacentHTML('beforeEnd', newHTML);
+
+  // 调用后端处理函数
+  getReturn2(content);
+
+  // 清空输入框
+  document.querySelector('.level').value = '';
+  document.querySelector('.content111').value = '';
+  document.querySelector('.notes').value = '';
 }
 
 
