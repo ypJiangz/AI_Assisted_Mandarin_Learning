@@ -13,6 +13,7 @@ body,html{
 .header-container{
     background-color: #fff;
     height: 90px;
+
 }
 
 .header-container img{
@@ -50,7 +51,7 @@ body,html{
 .login-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #190bdd;
+    background-color: #0c94ba;
     color: white;
     text-decoration: none;
     border-radius: 24px;
@@ -69,10 +70,10 @@ body,html{
 }
 
 .login-button:hover {
-    border: 2px solid #190bdd; /* 根据需要调整边框样式 */
+    border: 2px solid #0c94ba; /* 根据需要调整边框样式 */
 }
 
-.main-title{
+.main-title{ 
     color: #000;
     font-size: 3.2rem;
     text-align: center;
@@ -80,16 +81,18 @@ body,html{
     margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .color-title{
-    background: linear-gradient(to right, #5403ff, #ad00ff); /*设置渐变的方向从左到右 颜色从ff0000到ffff00*/
+    background: linear-gradient(to right, #0c94ba, #16bae8); /*设置渐变的方向从左到右 颜色从ff0000到ffff00*/
     -webkit-background-clip: text;/*将设置的背景颜色限制在文字中*/
     -webkit-text-fill-color: transparent;/*给文字设置成透明*/
-    font-size: 3.5rem;
+    font-size: 4rem;
+    font-weight: 600;
     text-align: center;
     max-width: 600px;
+    margin-top: 30px;
     margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
@@ -218,6 +221,7 @@ body,html{
 }
 
 .bottom-block{
+    display: flex;
     margin-top: 60px;
     margin-bottom: 40px;
     height: 588px;
@@ -237,9 +241,9 @@ body,html{
 }
 
 .h32{
-    color: #333;
-    font-size: 2rem;
-    margin:0 0 10px 30px;
+    color: #0056b3;
+    font-size: 1.7rem;
+    margin:90px 0 10px 50px;
     text-align: left;
     line-height: 1.2;
     font-weight: 700;
@@ -252,7 +256,7 @@ body,html{
 .span1 li{
     margin: 0 0 0 40px;
     list-style-type: square;
-    color: #190bdd;
+    color: #0c94ba;
     font-size: 2.2rem;
 }
 
@@ -264,24 +268,40 @@ body,html{
 
 }
 
-.bottom-block .span2{
+/* .bottom-block .span2{
     width: 580px;
     float: right;
     background-color: #ad00ff;
     background-image: linear-gradient(150deg, #6b81fa6b, #fff0 57%), linear-gradient(2deg, #2d22b0, #fff0), linear-gradient(168deg, #ad00ff, #fff);
     border-radius: 20px 0 0 20px;
+} */
+.bottom-block {
+    align-items: flex-start; 
+    display: flex
+}
+.bottom-block .span2 {
+    width: 800px;
+    float: right;
+    height: 430px;
+    width: 800px;
+    background: url('../img/一带一路背景.jpeg') no-repeat center bottom;
+    background-size: cover;
+    border-radius: 20px 0 0 20px;
 }
 
 .bottom-block img{
-    margin-top: 188px;
+    margin-top: 70px;
+    margin-bottom: 0px;
+
     float: right;
     height: 400px;
+    width: 700px;
     border-radius: 20px 0 0 20px;
 
 }
 
 .final-box{
-    background-image: linear-gradient(303deg, #613ec1, #fff0), linear-gradient(29deg, #3b5998, #fff0 63%);
+    background-image: linear-gradient(303deg, #0c94ba, #fff0), linear-gradient(29deg, #3b5998, #fff0 63%);
     height: 400px;
     margin:60px 60px 10px 60px;
     border-radius: 20px;
@@ -365,4 +385,90 @@ body,html{
     margin-left: auto;
     margin-right: auto;
     max-width: 270px;
+}
+/*新增代码*/
+.testimonial-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+.testimonial-text {
+    width: 60%; /* 文字区域宽度调整为60% */
+    padding-right: 20px; /* 文字和图片之间的间距 */
+}
+
+.testimonial-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.testimonial-text p {
+}
+
+.testimonial-text {
+    width: 40%; /* 文字区域宽度调整为40% */
+    padding-right: 20px; /* 文字和图片之间的间距 */
+}
+
+.testimonial-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.testimonial-text p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.testimonial-images {
+    width: 50%; /* 图片区域宽度调整为50% */
+    overflow: hidden;
+}
+
+.image-slide {
+    display: flex;
+    width: 100%;
+    animation: slide 10s infinite;
+}
+
+.image-slide img {
+    width: 100%;
+    display: block;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.text-content {
+    flex-basis: 60%; /* 文字区域占据60%的宽度 */
+    padding-right: 20px; /* 文字和图片之间的间距 */
+    font-size: 16px; /* 文字大小 */
+    line-height: 1.6; /* 行高 */
+}
+
+.text-content h2 {
+    font-size: 24px; /* 标题字体大小 */
+    margin-bottom: 10px;
+}
+
+.image-content {
+    flex-basis: 70%;
+    text-align: right; /* 图片靠右显示 */
+}
+
+.image-content img {
+    max-width: 100%; /* 图片最大宽度为容器宽度 */
+    height: auto; /* 图片高度自动 */
 }
